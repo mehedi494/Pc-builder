@@ -2,6 +2,7 @@ import "@/styles/Navbar.module.css";
 import { DownOutlined,UserOutlined } from "@ant-design/icons";
 
 import { Avatar, Dropdown, Layout, Space, theme } from "antd";
+import Link from "next/link";
 
 const { Header, Content, Footer } = Layout;
 
@@ -55,7 +56,7 @@ const Navbar = () => {
         }}
       >
         <div className="flex items-center text-white m-0 p-0 text-xl font-bold">
-          Pc Builder
+        <Link href='/'>Pc Builder</Link>
         </div>
 
         <Space size={30}>

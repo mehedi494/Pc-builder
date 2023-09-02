@@ -34,7 +34,7 @@ export default function Footer() {
       <div className="flex w-full mt-20 gap-5">
         <p>Privacy Policy</p>
         <p>Terms & Condition</p>
-        <p className="ml-auto"> &#169; BookShelf {year}</p>
+        <p className="ml-auto"> &#169; Pc builder {year}</p>
       </div>
     </div>
   );
