@@ -54,8 +54,8 @@ const Navbar = () => {
           alignItems: "cernter",
         }}
       >
-        <div className="container-logo" style={{ color: "white" }}>
-          <h1 style={{ margin: 0, padding: 0 }}>Pc Builder</h1>
+        <div className="flex items-center text-white m-0 p-0 text-xl font-bold">
+          Pc Builder
         </div>
 
         <Space size={30}>

@@ -1,15 +1,15 @@
-
-
 // import { RiFacebookBoxFill, RiInstagramLine } from 'react-icons/ri';
 export default function Footer() {
   const date = new Date();
   const year = date.getFullYear();
 
   return (
-    <div  style={{backgroundColor:'#1e1f27', color:'white', padding:'20px'}}>
-      <div  style={{display:"flex",justifyContent:"space-between"}}>
+    <div
+      style={{ backgroundColor: "#1e1f27", color: "white", padding: "20px" }}
+    >
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div>
-          <img className="h-10"  alt="Logo" />
+         <h1 className="text-3xl font-bold">Pc Builder</h1>
         </div>
         <div className="flex gap-20">
           <ul className="space-y-2">
