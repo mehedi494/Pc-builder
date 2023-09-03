@@ -1,19 +1,23 @@
 import Head from "next/head";
 
 import Layouts from "@/components/Layouts";
-import { Carousel, Radio } from "antd";
+import { Button, Carousel, Radio } from "antd";
 import { useState } from "react";
+import Image from "next/image";
+import image1 from "../assets/apple-macbook-pro-late-2021-apple-m1-pro-142-11657363629.webp";
+import image2 from "../assets/asus-x415ka-intel-cdc-n4500-14-inch-slate-grey-11667307058.webp";
+// import image3 from "../assets/Macbook-Transparent-Background.png"
+// import image4 from "../assets/pngwing.com.png"
 
 export default function Home() {
   const contentStyle = {
-    height: '160px',
-    color: '#fff',
-    lineHeight: '160px',
-    textAlign: 'center',
-    background: '#364d79',
+    height: "500px",
+    color: "#fff",
+
+    display: "flex",
   };
 
-  const [dotPosition, setDotPosition] = useState('right');
+  const [dotPosition, setDotPosition] = useState("right");
   const handlePositionChange = ({ target: { value } }) => {
     setDotPosition(value);
   };
@@ -26,9 +30,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div style={{minHeight:'100vh' ,maxWidth:'100vw'}}>
-<div>
-<Radio.Group
+      <div style={{ minHeight: "100vh", maxWidth: "100vw" }}>
+        <div>
+          {/* <Radio.Group
         onChange={handlePositionChange}
         value={dotPosition}
         style={{
@@ -39,24 +43,76 @@ export default function Home() {
         <Radio.Button value="bottom">Bottom</Radio.Button>
         <Radio.Button value="left">Left</Radio.Button>
         <Radio.Button value="right">Right</Radio.Button>
-      </Radio.Group>
-      <Carousel dotPosition={dotPosition}>
-        <div>
-          <h3 style={contentStyle}>1</h3>
-        </div>
-        <div>
-          <h3 style={contentStyle}>2</h3>
-        </div>
-        <div>
-          <h3 style={contentStyle}>3</h3>
-        </div>
-        <div>
-          <h3 style={contentStyle}>4</h3>
-        </div>
-      </Carousel>
-</div>
+      </Radio.Group> */}
+          <Carousel autoplay dotPosition={dotPosition}>
+            <div>
+              <div style={contentStyle}>
+                <div className="w-full flex justify-center items-center  flex-col px-4 ">
+                  <h1 className="font-bold text-3xl text-justify  text-black">
+                    Your dream is come true Macbook pro 2020 edition is here
+                  </h1>
+                  <p className="my-1 text-green-500">
+                    so lets grab your device
+                  </p>
+                  <Button type="dashed">Get started </Button>
+                </div>
+                <div className="w-full flex justify-center items-center   object-contain">
+                  <Image className="w-full" alt="" src={image1}></Image>
+                </div>
+              </div>
+            </div>
 
-       </div>
+            <div>
+              <div style={contentStyle}>
+                <div className="w-full flex justify-center items-center  flex-col px-4 ">
+                  <h1 className="font-bold text-3xl text-justify  text-black">
+                    Your dream is come true Macbook pro 2020 edition is here
+                  </h1>
+                  <p className="my-1 text-green-500">
+                    so lets grab your device
+                  </p>
+                  <Button type="dashed">Get started </Button>
+                </div>
+                <div className="w-full flex justify-center items-center   object-contain">
+                  <Image className="w-full" alt="" src={image2}></Image>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div style={contentStyle}>
+                <div className="w-full flex justify-center items-center  flex-col px-4 ">
+                  <h1 className="font-bold text-3xl text-justify  text-black">
+                    Your dream is come true Macbook pro 2020 edition is here
+                  </h1>
+                  <p className="my-1 text-green-500">
+                    so lets grab your device
+                  </p>
+                  <Button type="dashed">Get started </Button>
+                </div>
+                <div className="w-full flex justify-center items-center   object-contain">
+                  <Image className="w-full" alt="" src={image2}></Image>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div style={contentStyle}>
+                <div className="w-full flex justify-center items-center  flex-col px-4 ">
+                  <h1 className="font-bold text-3xl text-justify  text-black">
+                    Your dream is come true Macbook pro 2020 edition is here
+                  </h1>
+                  <p className="my-1 text-green-500">
+                    so lets grab your device
+                  </p>
+                  <Button type="dashed">Get started </Button>
+                </div>
+                <div className="w-full flex justify-center items-center   object-contain">
+                  <Image className="w-full" alt="" src={image2}></Image>
+                </div>
+              </div>
+            </div>
+          </Carousel>
+        </div>
+      </div>
     </>
   );
 }
