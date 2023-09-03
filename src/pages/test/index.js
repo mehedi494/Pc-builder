@@ -1,8 +1,7 @@
-import React from 'react';
-import { DatePicker } from 'antd';
+import ProductCard from "@/components/Ui/Card";
 
 const App = () => {
-  return <DatePicker />;
+  return <ProductCard />;
 };
 
 export default App;

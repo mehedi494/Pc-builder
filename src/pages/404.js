@@ -7,7 +7,7 @@ const NotFound =()=>{
     
 return(
    <div>
-     <div className="flex items-center justify-center w-full">
+     <div className="flex  items-center justify-center w-full">
 <Image alt="" className=""  width={500} height={500}  src={image}></Image>
 
     </div>
