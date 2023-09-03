@@ -15,11 +15,10 @@ const Navbar = () => {
     {
       label: (
         <a
-          target="_blank"
-          rel="noopener noreferrer"
+         
           href="https://www.antgroup.com"
         >
-          1st menu item
+          Cpu / Processor
         </a>
       ),
       key: "0",
@@ -27,23 +26,71 @@ const Navbar = () => {
     {
       label: (
         <a
-          target="_blank"
-          rel="noopener noreferrer"
+          
           href="https://www.aliyun.com"
         >
-          2nd menu item
+          MotherBoard
         </a>
       ),
       key: "1",
     },
     {
-      type: "divider",
+      label: (
+        <a
+          
+          href="https://www.aliyun.com"
+        >
+          Ram
+        </a>
+      ),
+      key: "2",
     },
     {
-      label: "3rd menu item（disabled）",
+      label: (
+        <a
+          
+          href="https://www.aliyun.com"
+        >
+          Power Supply
+        </a>
+      ),
       key: "3",
-      disabled: true,
     },
+    {
+      label: (
+        <a
+          
+          href="https://www.aliyun.com"
+        >
+         Storage Device
+        </a>
+      ),
+      key: "4",
+    },
+    {
+      label: (
+        <a
+          
+          href="https://www.aliyun.com"
+        >
+        Monitor
+        </a>
+      ),
+      key: "5",
+    },
+    {
+      label: (
+        <a
+          
+          href="https://www.aliyun.com"
+        >
+       others
+        </a>
+      ),
+      key: "6",
+    },
+  
+    
   ];
 
   return (
@@ -67,17 +114,15 @@ const Navbar = () => {
           >
             <a onClick={(e) => e.preventDefault()}>
               <Space style={{ color: "white" }}>
-                Hover me
+              Categories
                 <DownOutlined />
               </Space>
             </a>
           </Dropdown>
-          <a>
-            <p style={{ color: "white" }}>Nav options</p>
+          <a href="/pc-builder">
+            <p style={{ color: "white" }}>Pc Builder</p>
           </a>
-          <a>
-            <p style={{ color: "white" }}>Nav options</p>
-          </a>
+         
           <a>
           <Avatar
       style={{

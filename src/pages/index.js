@@ -32,18 +32,7 @@ export default function Home() {
       </Head>
       <div style={{ minHeight: "100vh", maxWidth: "100vw" }}>
         <div>
-          {/* <Radio.Group
-        onChange={handlePositionChange}
-        value={dotPosition}
-        style={{
-          marginBottom: 8,
-        }}
-      >
-        <Radio.Button value="top">Top</Radio.Button>
-        <Radio.Button value="bottom">Bottom</Radio.Button>
-        <Radio.Button value="left">Left</Radio.Button>
-        <Radio.Button value="right">Right</Radio.Button>
-      </Radio.Group> */}
+      
           <Carousel autoplay dotPosition={dotPosition}>
             <div>
               <div style={contentStyle}>
@@ -111,6 +100,10 @@ export default function Home() {
               </div>
             </div>
           </Carousel>
+
+          <div className='text-center text-3xl font-bold'>
+            this is best sell  product here section
+          </div>
         </div>
       </div>
     </>
