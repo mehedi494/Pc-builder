@@ -11,24 +11,25 @@ import {
 } from "react-icons/bs";
 import { FiMonitor } from "react-icons/fi";
 
-const Products = () => {
-  function getItem(label, key, icon, link) {
-    return {
-      key,
-      icon,
-      label: <a href={link}>{label}</a>,
-    };
-  }
+function getItem(label, key, icon, link) {
+  return {
+    key,
+    icon,
+    label: <a href={link}>{label}</a>,
+  };
+}
 
-  const items = [
-    getItem("CPU", "sub1", <BsCpu />, "/"),
-    getItem("MOTHERBOARD", "sub2", <BsMotherboard />, "/"),
-    getItem("RAM", "sub3", <BsMemory />, "/"),
-    getItem("POWER SUPPLY", "sub4", <BsPower />, "/"),
-    getItem("MONITOR", "sub1", <FiMonitor />, "/"),
-    getItem("STORAGE DEVICE", "sub1", <BiMemoryCard />, "/"),
-    getItem("OTHERS", "sub1", <BsThreeDots />, "/"),
-  ];
+const items = [
+  getItem("CPU", "sub1", <BsCpu />, "/"),
+  getItem("MOTHERBOARD", "sub2", <BsMotherboard />, "/"),
+  getItem("RAM", "sub3", <BsMemory />, "/"),
+  getItem("POWER SUPPLY", "sub4", <BsPower />, "/"),
+  getItem("MONITOR", "sub1", <FiMonitor />, "/"),
+  getItem("STORAGE DEVICE", "sub1", <BiMemoryCard />, "/"),
+  getItem("OTHERS", "sub1", <BsThreeDots />, "/"),
+];
+
+const Products = () => {
   const onClick = (e) => {
     console.log("click", e);
   };
@@ -58,3 +59,4 @@ export default Products;
 Products.getLayout = function getLayout(page) {
   return <Layouts>{page}</Layouts>;
 };
+
