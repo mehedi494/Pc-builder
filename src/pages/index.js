@@ -60,7 +60,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div style={{ minHeight: "100vh", maxWidth: "100vw" }} className="bg-gray-100">
+      <div style={{ minHeight: "100vh", maxWidth: "100vw" }} className="">
         <div>
           <Carousel autoplay dotPosition={dotPosition}>
             {bannerData.map((product, index) => (
