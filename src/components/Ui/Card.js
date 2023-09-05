@@ -5,13 +5,12 @@ const { Meta } = Card;
 const ProductCard = ({ props }) => {
   return (
     <>
-      <Card
+      <Card 
         hoverable
         style={{
           width: 240,
         }}
-        cover={<Image width={300} height={200} alt="example" src={image} />}
-      >
+        cover={<Image width={300} height={200} alt="example" src={image} />}>
         <Meta title="Europe Street beat" />
         <p>CATERGORIES</p>
         <p>Price : 200000</p>

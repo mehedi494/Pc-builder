@@ -1,7 +1,7 @@
 import "@/styles/Navbar.module.css";
 import { DownOutlined,UserOutlined } from "@ant-design/icons";
 
-import { Avatar, Dropdown, Layout, Space, theme } from "antd";
+import { Avatar, Button, Dropdown, Layout, Space, theme } from "antd";
 import Link from "next/link";
 
 const { Header, Content, Footer } = Layout;
@@ -119,9 +119,16 @@ const Navbar = () => {
               </Space>
             </a>
           </Dropdown>
-          <a href="/pc-builder">
+
+          <Link href='/products'>
+            <p style={{ color: "white" }}>Products</p>
+          </Link>
+          <Link href='/pc-builder'>
+            <Button type="default" >
             <p style={{ color: "white" }}>Pc Builder</p>
-          </a>
+            </Button>
+          </Link>
+          
          
           <a>
           <Avatar

@@ -6,7 +6,7 @@ import iconPic from "../../assets/dynabook-toshiba-satellite-pro-c40-g-11i-intel
 import { BsCpu } from "react-icons/bs";
 const Pcbuilder = () => {
   return (
-    <div className="flex py-2 justify-center items-center min-h-screen">
+    <div className="flex py-2 justify-center items-center min-h-screen scroll-m-1">
       <Card className="">
         <h1 className=" text-center font-semibold text-gray-600 text-2xl mb-2"><i>Build Your Custom Pc</i> </h1>
         <Divider type="horizontal"></Divider>
@@ -16,7 +16,7 @@ const Pcbuilder = () => {
             <Card key={index} className="mb-2">
               <div className="flex w-full items-center gap-x-1 ">
                 <BsCpu className="text-xl"></BsCpu>
-                <p>Cpu</p>
+                <p>CPU</p>
 
                 <Divider type="vertical"></Divider>
                 <div>

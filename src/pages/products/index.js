@@ -44,8 +44,8 @@ const Products = () => {
         mode="vertical"
         items={items}
       />
-      <div className="w-full p-8  grid grid-cols-4 ">
-        {Array(4)
+      <div className="w-full p-8  grid grid-cols-4 gap-4  ">
+        {Array(50)
           .fill("")
           .map((product, index) => (
             <ProductCard key={index}></ProductCard>
@@ -59,4 +59,3 @@ export default Products;
 Products.getLayout = function getLayout(page) {
   return <Layouts>{page}</Layouts>;
 };
-
