@@ -2,6 +2,7 @@ import Head from "next/head";
 
 import Layouts from "@/components/Layouts";
 import ProductCard from "@/components/Ui/Card";
+import { useGetAllProductsQuery } from "@/redux/api/productsApi";
 import { Button, Carousel } from "antd";
 import Image from "next/image";
 import { useState } from "react";
@@ -12,6 +13,9 @@ import image4 from "../assets/dynabook-toshiba-satellite-pro-c40-g-11i-intel-116
 import image5 from "../assets/lenovo-ideapad-d330-10igl-intel-cdc-n4020-101-11646051236.webp";
 
 export default function Home() {
+  const { data } = useGetAllProductsQuery();
+  console.log(data);
+
   const contentStyle = {
     height: "500px",
     color: "#fff",

@@ -1,9 +1,12 @@
 import Image from "next/image";
 
 import image from '../assets/404.jpg'
-
+import { useRouter } from "next/router";
 const NotFound =()=>{
-    
+const router = useRouter()
+
+    setTimeout(()=>(router.push('/')
+      ),4000)
     
 return(
    <div>

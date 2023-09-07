@@ -3,12 +3,15 @@ import { Button, Card, Divider, Input } from "antd";
 import Image from "next/image";
 import iconPic from "../../assets/dynabook-toshiba-satellite-pro-c40-g-11i-intel-11663225340.webp";
 
+import Link from "next/link";
 import { BsCpu } from "react-icons/bs";
 const Pcbuilder = () => {
   return (
     <div className="flex py-2 justify-center items-center min-h-screen scroll-m-1">
       <Card className="">
-        <h1 className=" text-center font-semibold text-gray-600 text-2xl mb-2"><i>Build Your Custom Pc</i> </h1>
+        <h1 className=" text-center font-semibold text-gray-600 text-2xl mb-2">
+          <i>Build Your Custom Pc</i>{" "}
+        </h1>
         <Divider type="horizontal"></Divider>
         {Array(4)
           .fill("")
@@ -51,7 +54,9 @@ const Pcbuilder = () => {
                   <p className="border rounded p-1">
                     <i>Price: </i> 238 $
                   </p>
-                  <Button type="dashed ">Select </Button>
+                  <Link href="/select-pc-builder">
+                    <Button type="dashed ">Select </Button>
+                  </Link>
                 </div>
               </div>
             </Card>
