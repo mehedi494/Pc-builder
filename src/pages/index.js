@@ -14,7 +14,7 @@ import image5 from "../assets/lenovo-ideapad-d330-10igl-intel-cdc-n4020-101-1164
 
 export default function Home() {
   const { data } = useGetAllProductsQuery();
-  console.log(data);
+  // console.log(data);
 
   const contentStyle = {
     height: "500px",

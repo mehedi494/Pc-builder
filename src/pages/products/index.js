@@ -1,7 +1,9 @@
 import Layouts from "@/components/Layouts";
 import ProductCard from "@/components/Ui/Card";
 import { useGetAllProductsQuery } from "@/redux/api/productsApi";
+
 import { Menu } from "antd";
+import { useEffect, useState } from "react";
 import { BiMemoryCard } from "react-icons/bi";
 import {
   BsCpu,
@@ -21,27 +23,56 @@ function getItem(label, key, icon, link) {
 }
 
 const items = [
-  getItem("CPU", "sub1", <BsCpu />, ),
-  getItem("MOTHERBOARD", "sub2", <BsMotherboard />, ),
-  getItem("RAM", "sub3", <BsMemory />,),
-  getItem("POWER SUPPLY", "sub4", <BsPower />, ),
-  getItem("MONITOR", "sub5", <FiMonitor />, ),
-  getItem("STORAGE DEVICE", "sub6", <BiMemoryCard />, ),
-  getItem("OTHERS", "sub7", <BsThreeDots />, ),
+  getItem("CPU", "cpu", <BsCpu />),
+  getItem("MOTHERBOARD", "motherboard", <BsMotherboard />),
+  getItem("RAM", "ram", <BsMemory />),
+  getItem("POWER SUPPLY", "power supply", <BsPower />),
+  getItem("MONITOR", "monitor", <FiMonitor />),
+  getItem("STORAGE DEVICE", "ssd", <BiMemoryCard />),
+  getItem("OTHERS", "others", <BsThreeDots />),
 ];
 
 const Products = () => {
-  const onClick = (e) => {
-    console.log("click", e);
-  };
+  const [products, setProducts] = useState([]);
   const { data } = useGetAllProductsQuery();
 
+  const onClick = (e) => {
+    console.log("click", e);
+    setProducts(selectProduct(e.key));
+  };
 
+  useEffect(() => {
+    setProducts(data?.data);
+  }, [data]);
+  // console.log(products);
+  const selectProduct = (category) => {
+    const x = data?.data?.filter((product) => {
+      if (product.category === category && category !== "others") {
+        return product;
+      } else if (
+        category === "others" &&
+        product.category !==
+          ("monitor" &&
+            "ssd" &&
+            "power supply" &&
+            "ram" &&
+            "motherboard" &&
+            "cpu")
+      ) {
+        return product;
+        // console.log(product);
+      }
+    });
+    console.log(x);
+    return x;
+  };
+
+  // console.log(selectProduct);
 
   return (
     <div className="flex w-full flex-row p-4  ">
       <Menu
-        onClick={onClick}
+        onClick={/* () => selectProduct("ram") */ onClick}
         style={{
           width: 256,
         }}
@@ -49,9 +80,9 @@ const Products = () => {
         items={items}
       />
       <div className="w-full p-8  grid grid-cols-4 gap-4  ">
-        {data?.data?.map((products, index) => (
-            <ProductCard key={index} products={products}></ProductCard>
-          ))}
+        {products?.map((products, index) => (
+          <ProductCard key={index} products={products}></ProductCard>
+        ))}
       </div>
     </div>
   );

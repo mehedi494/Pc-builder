@@ -1,10 +1,17 @@
 import Layouts from "@/components/Layouts";
+import { useGetSingleProductQuery } from "@/redux/api/productsApi";
 import { Button, Card, Divider, Input } from "antd";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import image from "../../../assets/dynabook-toshiba-satellite-pro-c40-g-11i-intel-11663225340.webp";
 
-const ProductDetails = () => {
-  const data = [1, 2, 2, 2];
+const ProductDetails = ({}) => {
+  const router = useRouter();
+  const params = router.query.id;
+  console.log(params);
+  const { data } = useGetSingleProductQuery(params);
+  const product = data?.data;
+  console.log(product?.image);
   return (
     <div>
       <div className="flex  w-full h-[450px]">
@@ -15,30 +22,21 @@ const ProductDetails = () => {
           <div className="flex justify-center items-center flex-col ">
             <Image
               className=" "
-              src={image}
+              src={product?.image[0]}
               width={400}
               height={50}
               alt=""></Image>
 
             <div className="flex gap-2">
-              <Image
-                className="border-2 "
-                src={image}
-                width={50}
-                height={50}
-                alt=""></Image>
-              <Image
-                className="border-2 "
-                src={image}
-                width={50}
-                height={50}
-                alt=""></Image>
-              <Image
-                className="border-2 "
-                src={image}
-                width={50}
-                height={50}
-                alt=""></Image>
+              {product?.image?.map((img, index) => {
+                <Image
+                  key={index}
+                  className="border-2 "
+                  src={img}
+                  width={50}
+                  height={50}
+                  alt=""></Image>;
+              })}
             </div>
           </div>
         </div>{" "}
@@ -52,23 +50,22 @@ const ProductDetails = () => {
           <div className="flex   flex-col   ">
             <div>
               <h1>
-                <b> Lenovo yoga idea pad i3</b>
+                <b> {product?.name}</b>
               </h1>
               <p className="">
-                Category : <i>Laptop</i>{" "}
+                Category : <i>{product?.category}</i>{" "}
               </p>
               <p>
                 Description:{" "}
                 <i>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Officiis, veniam.
+                  {product?.description}
                 </i>
               </p>
               <p>
-                Price: <b>100$</b>
+                Price: <b>{product?.price}$</b>
               </p>
               <p>
-                Status: <b>IN STOCK</b>
+                Status: <b>{product?.status.toLocaleUpperCase()}</b>
               </p>
             </div>
             <div className=" flex felx-col gap-4 ">
