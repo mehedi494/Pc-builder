@@ -95,11 +95,9 @@ export default function Home() {
             </p>
 
             <div className="grid grid-cols-4">
-              {Array(4)
-                .fill("")
-                .map((some, index) => (
-                  <ProductCard key={index}></ProductCard>
-                ))}
+              {data?.data?.map((products, index) => (
+                <ProductCard key={index} products={products}></ProductCard>
+              ))}
             </div>
           </div>
         </div>

@@ -1,20 +1,22 @@
 import { Card } from "antd";
 import Image from "next/image";
-import image from "../../assets/lenovo-ideapad-d330-10igl-intel-cdc-n4020-101-11646051236.webp";
+
 const { Meta } = Card;
-const ProductCard = ({ props }) => {
+const ProductCard = ({ products }) => {
+  const img = products?.image[0];
+  console.log(img);
   return (
     <>
-      <Card 
+      <Card
         hoverable
         style={{
           width: 240,
         }}
-        cover={<Image width={300} height={200} alt="example" src={image} />}>
-        <Meta title="Europe Street beat" />
-        <p>CATERGORIES</p>
-        <p>Price : 200000</p>
-        <p>status: IN STOCK</p>
+        cover={<Image width={300} height={200} alt="example" src={img} />}>
+        <Meta title={products?.name} />
+        <p>{products?.category}</p>
+        <p>Price : {products?.price}</p>
+        <p>status: {products?.status}</p>
         <p>Rating: 4.3/5.0</p>
       </Card>
     </>

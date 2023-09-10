@@ -1,5 +1,6 @@
 import Layouts from "@/components/Layouts";
 import ProductCard from "@/components/Ui/Card";
+import { useGetAllProductsQuery } from "@/redux/api/productsApi";
 import { Menu } from "antd";
 import { BiMemoryCard } from "react-icons/bi";
 import {
@@ -20,19 +21,22 @@ function getItem(label, key, icon, link) {
 }
 
 const items = [
-  getItem("CPU", "sub1", <BsCpu />, "/"),
-  getItem("MOTHERBOARD", "sub2", <BsMotherboard />, "/"),
-  getItem("RAM", "sub3", <BsMemory />, "/"),
-  getItem("POWER SUPPLY", "sub4", <BsPower />, "/"),
-  getItem("MONITOR", "sub1", <FiMonitor />, "/"),
-  getItem("STORAGE DEVICE", "sub1", <BiMemoryCard />, "/"),
-  getItem("OTHERS", "sub1", <BsThreeDots />, "/"),
+  getItem("CPU", "sub1", <BsCpu />, ),
+  getItem("MOTHERBOARD", "sub2", <BsMotherboard />, ),
+  getItem("RAM", "sub3", <BsMemory />,),
+  getItem("POWER SUPPLY", "sub4", <BsPower />, ),
+  getItem("MONITOR", "sub5", <FiMonitor />, ),
+  getItem("STORAGE DEVICE", "sub6", <BiMemoryCard />, ),
+  getItem("OTHERS", "sub7", <BsThreeDots />, ),
 ];
 
 const Products = () => {
   const onClick = (e) => {
     console.log("click", e);
   };
+  const { data } = useGetAllProductsQuery();
+
+
 
   return (
     <div className="flex w-full flex-row p-4  ">
@@ -45,10 +49,8 @@ const Products = () => {
         items={items}
       />
       <div className="w-full p-8  grid grid-cols-4 gap-4  ">
-        {Array(50)
-          .fill("")
-          .map((product, index) => (
-            <ProductCard key={index}></ProductCard>
+        {data?.data?.map((products, index) => (
+            <ProductCard key={index} products={products}></ProductCard>
           ))}
       </div>
     </div>
