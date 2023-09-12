@@ -2,7 +2,6 @@ import Head from "next/head";
 
 import Layouts from "@/components/Layouts";
 import ProductCard from "@/components/Ui/Card";
-import { useGetAllProductsQuery } from "@/redux/api/productsApi";
 import { Button, Carousel } from "antd";
 import Image from "next/image";
 import { useState } from "react";
@@ -12,8 +11,8 @@ import image3 from "../assets/dynabook-toshiba-satellite-pro-c40-g-109-intel-116
 import image4 from "../assets/dynabook-toshiba-satellite-pro-c40-g-11i-intel-11663225340.webp";
 import image5 from "../assets/lenovo-ideapad-d330-10igl-intel-cdc-n4020-101-11646051236.webp";
 
-export default function Home() {
-  const { data } = useGetAllProductsQuery();
+export default function Home({ data }) {
+  // const { data } = useGetAllProductsQuery();
   // console.log(data);
 
   const contentStyle = {
@@ -56,6 +55,9 @@ export default function Home() {
     },
   ];
 
+  const sliceData = data.data.slice(0, 4);
+  // console.log(sliceData);
+
   return (
     <>
       <Head>
@@ -94,9 +96,9 @@ export default function Home() {
               Most Treanding Sales in this month
             </p>
 
-            <div className="grid grid-cols-4">
-              {data?.data?.map((products, index) => (
-                <ProductCard key={index} products={products}></ProductCard>
+            <div className="flex justify-center flex-row gap-x-12 py-4">
+              {sliceData?.map((products, index) => (
+                <ProductCard key={index} link={true} products={products}></ProductCard>
               ))}
             </div>
           </div>
@@ -108,4 +110,17 @@ export default function Home() {
 
 Home.getLayout = function getLayout(page) {
   return <Layouts>{page}</Layouts>;
+};
+
+export const getStaticProps = async () => {
+  const res = await fetch(`${process.env.SERVER_BASE_URL}/products`);
+  const data = await res.json();
+  // console.log(data);
+
+  return {
+    props: {
+      data,
+    },
+    revalidate: 30,
+  };
 };

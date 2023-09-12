@@ -1,6 +1,5 @@
 import Layouts from "@/components/Layouts";
 import ProductCard from "@/components/Ui/Card";
-import { useGetAllProductsQuery } from "@/redux/api/productsApi";
 
 import { Menu } from "antd";
 import { useEffect, useState } from "react";
@@ -32,12 +31,12 @@ const items = [
   getItem("OTHERS", "others", <BsThreeDots />),
 ];
 
-const Products = () => {
+const Products = ({ data }) => {
   const [products, setProducts] = useState([]);
-  const { data } = useGetAllProductsQuery();
+  // const { data } = useGetAllProductsQuery();
 
   const onClick = (e) => {
-    console.log("click", e);
+    // console.log("click", e);
     setProducts(selectProduct(e.key));
   };
 
@@ -63,7 +62,7 @@ const Products = () => {
         // console.log(product);
       }
     });
-    console.log(x);
+    // console.log(x);
     return x;
   };
 
@@ -81,7 +80,7 @@ const Products = () => {
       />
       <div className="w-full p-8  grid grid-cols-4 gap-4  ">
         {products?.map((products, index) => (
-          <ProductCard key={index} products={products}></ProductCard>
+          <ProductCard key={index} link={true} products={products}></ProductCard>
         ))}
       </div>
     </div>
@@ -91,4 +90,15 @@ export default Products;
 
 Products.getLayout = function getLayout(page) {
   return <Layouts>{page}</Layouts>;
+};
+
+export const getStaticProps = async () => {
+  const res = await fetch(`${process.env.SERVER_BASE_URL}/products`);
+  const data = await res.json();
+  // console.log(data);
+  return {
+    props: {
+      data,
+    },
+  };
 };
