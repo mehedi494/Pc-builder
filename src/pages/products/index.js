@@ -36,14 +36,14 @@ const Products = ({ data }) => {
   // const { data } = useGetAllProductsQuery();
 
   const onClick = (e) => {
-    // console.log("click", e);
+    
     setProducts(selectProduct(e.key));
   };
 
   useEffect(() => {
     setProducts(data?.data);
   }, [data]);
-  // console.log(products);
+  
   const selectProduct = (category) => {
     const x = data?.data?.filter((product) => {
       if (product.category === category && category !== "others") {
@@ -59,14 +59,14 @@ const Products = ({ data }) => {
             "cpu")
       ) {
         return product;
-        // console.log(product);
+        
       }
     });
-    // console.log(x);
+    
     return x;
   };
 
-  // console.log(selectProduct);
+  
 
   return (
     <div className="flex w-full flex-row p-4  ">
@@ -95,7 +95,7 @@ Products.getLayout = function getLayout(page) {
 export const getStaticProps = async () => {
   const res = await fetch(`${process.env.SERVER_BASE_URL}/products`);
   const data = await res.json();
-  // console.log(data);
+  
   return {
     props: {
       data,

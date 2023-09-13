@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 const ProductDetails = ({ data }) => {
   const router = useRouter();
   const params = router.query.id;
-  // console.log(data);
+  
   // const { data } = useGetSingleProductQuery(params);
 
   const product = data?.data;
@@ -119,7 +119,7 @@ export const getStaticPaths = async () => {
   const paths = data?.data.map((product, index) => ({
     params: { id: product?._id },
   }));
-  // console.log(paths);
+  
   return {
     paths,
     fallback: false,
@@ -130,7 +130,7 @@ export const getStaticProps = async (context) => {
   const { id } = context.params;
   const res = await fetch(`${process.env.SERVER_BASE_URL}/products/${id}`);
   const data = await res.json();
-  // console.log(data);
+  
   return {
     props: {
       data,

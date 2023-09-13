@@ -8,14 +8,14 @@ import { useDispatch } from "react-redux";
 const { Meta } = Card;
 const ProductCard = ({ products, link }) => {
   const img = products?.image[0];
-  // console.log(products);
+  
   const { _id: id } = products;
   const router = useRouter();
 
   const dispatch = useDispatch();
 
   const handleAddtoBuild = () => {
-    console.log(products);
+    
   };
 
   return (

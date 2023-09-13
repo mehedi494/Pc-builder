@@ -13,7 +13,7 @@ import image5 from "../assets/lenovo-ideapad-d330-10igl-intel-cdc-n4020-101-1164
 
 export default function Home({ data }) {
   // const { data } = useGetAllProductsQuery();
-  // console.log(data);
+  
 
   const contentStyle = {
     height: "500px",
@@ -56,7 +56,7 @@ export default function Home({ data }) {
   ];
 
   const sliceData = data.data.slice(0, 4);
-  // console.log(sliceData);
+  
 
   return (
     <>
@@ -115,7 +115,7 @@ Home.getLayout = function getLayout(page) {
 export const getStaticProps = async () => {
   const res = await fetch(`${process.env.SERVER_BASE_URL}/products`);
   const data = await res.json();
-  // console.log(data);
+  
 
   return {
     props: {

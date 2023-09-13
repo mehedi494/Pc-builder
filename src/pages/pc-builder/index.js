@@ -118,7 +118,7 @@ const Pcbuilder = () => {
 
               <Divider type="vertical"></Divider>
               <div>
-                <>{console.log(content?.data)}</>
+                
                 {content?.data?.image&& (
                   <Image
                     alt=""
