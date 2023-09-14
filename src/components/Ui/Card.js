@@ -9,7 +9,7 @@ const { Meta } = Card;
 const ProductCard = ({ products, link }) => {
   const img = products?.image[0];
 
-  const { _id: id } = products;
+  const { _id } = products;
   const router = useRouter();
 
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ const ProductCard = ({ products, link }) => {
   return (
     <>
       {link ? (
-        <Link href={`products/product-details/${id}`}>
+        <Link href={`products/product-details/${_id}`}>
           <Card
             hoverable
            className="w-[240px] desktop:w-[240px] tablet:w-[240px] mobile:w-[auto]"
