@@ -2,11 +2,14 @@ import Image from "next/image";
 
 import image from '../assets/404.jpg'
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 const NotFound =()=>{
 const router = useRouter()
 
+  useEffect(()=>{
     setTimeout(()=>(router.push('/')
-      ),4000)
+    ),4000)
+  },[router])
     
 return(
    <div>

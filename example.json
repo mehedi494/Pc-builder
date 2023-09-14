@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Value-Top MANIA X5 mini Mid Tower Micro ATX Gaming Casing",
+    "status": "in-stock",
+    "price": "20",
+    "rating": "4.7",
+    "category": "casing",
+    "description": "Best Air flow observer gril for best air coolig system",
+    "keyFeature": [
+      {
+        "brand": "Value-Top",
+        "model": "MANIA X5 mini Mid Tower",
+        "specification": "Tempered Glass Side Panel,1 x 12CM RGB Fan on Rear1 x USB 3.0 2 x USB 2.0, HD Audio"
+      }
+    ],
+    "image": [
+      "https://i.ibb.co/6yTzzK7/casing-mania-x5-mini-01-228x228.webp",
+      "https://i.ibb.co/6yTzzK7/casing-mania-x5-mini-01-228x228.webp"
+    ],
+    "individualRating": "4.5",
+    "avgRating": "4.4",
+    "review": "32"
+  },
+  {
+    "name": "Revenger GHOST ",
+    "status": "in-stock",
+    "price": "25",
+    "rating": "4.4",
+    "category": "casing",
+    "description": "Best Air flow observer gril for best air coolig system",
+    "keyFeature": [
+      {
+        "brand": "Revenger",
+        "model": "Mid Tower RGB ATX Gaming Case",
+        "specification": "Bottom Loaded,0.5mm Steel,Left: Tempered Glass"
+      }
+    ],
+    "image": [
+      "https://i.ibb.co/dPNmqdF/casing-ghost-01-228x228.webp",
+      "https://i.ibb.co/dPNmqdF/casing-ghost-01-228x228.webp"
+    ],
+    "individualRating": "4.5",
+    "avgRating": "4.2",
+    "review": "38"
+  },
+  {
+    "name": "Golden Field XH8 Mid Tower ATX Gaming Case",
+    "status": "in-stock",
+    "price": "22",
+    "rating": "4.1",
+    "category": "casing",
+    "description": "Best Air flow observer gril for best air coolig system",
+    "keyFeature": [
+      {
+        "brand": "Golden Field",
+        "model": "XH8",
+        "specification": "Supported Mainboard: ATX Tempered Glass, Left Side Panel3x ARGB Pre-installed Fans,  I/O port: USB 3.0*1 & USB 2.0*2 & HD Audio"
+      }
+    ],
+    "image": [
+      "https://i.ibb.co/vPNFrZg/caasing-XH8-01-500x500.webp",
+      "https://i.ibb.co/vPNFrZg/caasing-XH8-01-500x500.webp"
+    ],
+    "individualRating": "4.4",
+    "avgRating": "4.1",
+    "review": "25"
+  }
+]

@@ -1,5 +1,5 @@
 import { addComponets } from "@/redux/features/pcBuilderSlice";
-import { Card } from "antd";
+import { Button, Card } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -8,15 +8,13 @@ import { useDispatch } from "react-redux";
 const { Meta } = Card;
 const ProductCard = ({ products, link }) => {
   const img = products?.image[0];
-  
+
   const { _id: id } = products;
   const router = useRouter();
 
   const dispatch = useDispatch();
 
-  const handleAddtoBuild = () => {
-    
-  };
+  const handleAddtoBuild = () => {};
 
   return (
     <>
@@ -24,12 +22,10 @@ const ProductCard = ({ products, link }) => {
         <Link href={`products/product-details/${id}`}>
           <Card
             hoverable
-            style={{
-              width: 240,
-            }}
+           className="w-[240px] desktop:w-[240px] tablet:w-[240px] mobile:w-[auto]"
             cover={<Image width={300} height={200} alt="example" src={img} />}>
             <Meta title={products?.name} />
-            <p>{products?.category}</p>
+            <p>Category: {products?.category}</p>
             <p>Price : {products?.price}</p>
             <p>status: {products?.status}</p>
             <p>Rating: 4.3/5.0</p>
@@ -37,10 +33,8 @@ const ProductCard = ({ products, link }) => {
         </Link>
       ) : (
         <Card
-          onClick={() =>
-            dispatch(addComponets(products)) & router.push("/pc-builder")
-          }
-          hoverable
+          
+          
           style={{
             width: 240,
           }}
@@ -50,6 +44,9 @@ const ProductCard = ({ products, link }) => {
           <p>Price : {products?.price}</p>
           <p>status: {products?.status}</p>
           <p>Rating: 4.3/5.0</p>
+          <Button onClick={() =>
+            dispatch(addComponets(products)) & router.push("/pc-builder")
+          } type="primary" className="bg-green-500"> Add To Builder</Button>
         </Card>
       )}
     </>

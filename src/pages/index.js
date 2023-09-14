@@ -13,13 +13,10 @@ import image5 from "../assets/lenovo-ideapad-d330-10igl-intel-cdc-n4020-101-1164
 
 export default function Home({ data }) {
   // const { data } = useGetAllProductsQuery();
-  
 
   const contentStyle = {
     height: "500px",
     color: "#fff",
-
-    display: "flex",
   };
 
   const [dotPosition, setDotPosition] = useState("bottom");
@@ -31,32 +28,31 @@ export default function Home({ data }) {
     {
       img: image1,
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium beatae expedita amet aliquam quis voluptates ",
+        "This laptop can perform complex programs with ease thanks to an AMD Ryzen 5 7520U (2.8 GHz up to 4.3 GHz). The processor has four cores and eight threads ",
     },
     {
       img: image2,
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium beatae expedita amet aliquam quis voluptates ",
+        "This laptop can perform complex programs with ease thanks to an AMD Ryzen 5 7520U (2.8 GHz up to 4.3 GHz). The processor has four cores and eight threads ",
     },
     {
       img: image3,
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium beatae expedita amet aliquam quis voluptates ",
+        "This laptop can perform complex programs with ease thanks to an AMD Ryzen 5 7520U (2.8 GHz up to 4.3 GHz). The processor has four cores and eight threads ",
     },
     {
       img: image4,
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium beatae expedita amet aliquam quis voluptates ",
+        "This laptop can perform complex programs with ease thanks to an AMD Ryzen 5 7520U (2.8 GHz up to 4.3 GHz). The processor has four cores and eight threads  ",
     },
     {
       img: image5,
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium beatae expedita amet aliquam quis voluptates ",
+        "This laptop can perform complex programs with ease thanks to an AMD Ryzen 5 7520U (2.8 GHz up to 4.3 GHz). The processor has four cores and eight threads ",
     },
   ];
 
-  const sliceData = data.data.slice(0, 4);
-  
+  const sliceData = data.data.slice(0, 8);
 
   return (
     <>
@@ -67,20 +63,20 @@ export default function Home({ data }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div style={{ minHeight: "100vh", maxWidth: "100vw" }} className="">
-        <div>
+        <div >
           <Carousel autoplay dotPosition={dotPosition}>
             {bannerData.map((product, index) => (
               <div key={index}>
-                <div style={contentStyle}>
+                <div style={contentStyle} className="grid grid-cols-2  tablet:grid-cols-2 mobile:grid-cols-1">
                   <div className="w-full flex justify-center items-center  flex-col px-4 ">
-                    <h1 className="font-bold text-3xl text-justify  text-black">
+                    <h1 className=" text-gray-600 font-thin text-3xl desktop:text-3xl mobile:text-sm text-justify  ">
                       {product.description}
                     </h1>
-                    <p className="my-1 text-blue-900 text-xl ">
+                    <p className="my-1 text-red-950 text-xl ">
                       <i>So lets grab your device ✌️ </i>
                     </p>
                     <Button className="bg-green-600 text-white " type="text">
-                      Get started{" "}
+                      Get started
                     </Button>
                   </div>
                   <div className="w-full flex justify-center items-center   object-contain">
@@ -91,14 +87,17 @@ export default function Home({ data }) {
             ))}
           </Carousel>
 
-          <div className=" ">
+          <div className="">
             <p className="text-center text-2xl font-semibold  text-gray-600">
               Most Treanding Sales in this month
             </p>
 
-            <div className="flex justify-center flex-row gap-x-12 py-4">
+            <div className="tablet:grid-cols-2 mobile:grid-cols-1 desktop:grid-cols-4 grid grid-cols-4   justify-items-center gap-y-5 py-4">
               {sliceData?.map((products, index) => (
-                <ProductCard key={index} link={true} products={products}></ProductCard>
+                <ProductCard
+                  key={index}
+                  link={true}
+                  products={products}></ProductCard>
               ))}
             </div>
           </div>
@@ -115,7 +114,6 @@ Home.getLayout = function getLayout(page) {
 export const getStaticProps = async () => {
   const res = await fetch(`${process.env.SERVER_BASE_URL}/products`);
   const data = await res.json();
-  
 
   return {
     props: {

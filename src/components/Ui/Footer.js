@@ -7,11 +7,11 @@ export default function Footer() {
     <div
       style={{ backgroundColor: "#1e1f27", color: "white", padding: "20px" }}
     >
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div className="flex  w-full desktop:flex-row tablet:flex-row  mobile:flex-col  justify-between " >
         <div>
          <h1 className="text-3xl font-bold">Pc Builder</h1>
         </div>
-        <div className="flex gap-20">
+        <div className="flex gap-x-5">
           <ul className="space-y-2">
             <li>Upcoming</li>
             <li>Shipping</li>
@@ -22,8 +22,8 @@ export default function Footer() {
             <li>Careers</li>
           </ul>
           <ul className="space-y-2">
-            <li>List your gear</li>
-            <li>Contact team</li>
+            <li> List your gear</li>
+            <li> Contact team</li>
           </ul>
         </div>
         <div className="flex gap-2 text-2xl">
