@@ -10,13 +10,13 @@ const Login = () => {
           <div className="flex justify-around bg">
             <GoogleOutlined
               onClick={() =>
-                signIn("google", { callbackUrl: process.env.NEXTAUTH_URL })
+                signIn("google", { callbackUrl: "https://pc-builder-fronend.vercel.app" })
               }
             />
             <Divider type="vertical"></Divider>
             <GithubOutlined
               onClick={() =>
-                signIn("github", { callbackUrl: process.env.NEXTAUTH_URL })
+                signIn("github", { callbackUrl: "https://pc-builder-fronend.vercel.app" })
               }
             />
           </div>
