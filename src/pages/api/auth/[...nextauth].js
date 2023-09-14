@@ -17,6 +17,9 @@ export const authOptions = {
     }),
     // ...add more providers here
   ],
+  pages:{
+    singIn:"/login"
+  }
   
 };
 
