@@ -10,13 +10,13 @@ const Login = () => {
           <div className="flex justify-around bg">
             <GoogleOutlined
               onClick={() =>
-                signIn("google", { callbackUrl: "http://localhost:3000" })
+                signIn("google", { callbackUrl: process.env.NEXTAUTH_URL })
               }
             />
             <Divider type="vertical"></Divider>
             <GithubOutlined
               onClick={() =>
-                signIn("github", { callbackUrl: "http://localhost:3000" })
+                signIn("github", { callbackUrl: process.env.NEXTAUTH_URL })
               }
             />
           </div>
