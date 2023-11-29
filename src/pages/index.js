@@ -63,11 +63,13 @@ export default function Home({ data }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div style={{ minHeight: "100vh", maxWidth: "100vw" }} className="">
-        <div >
+        <div>
           <Carousel autoplay dotPosition={dotPosition}>
             {bannerData.map((product, index) => (
               <div key={index}>
-                <div style={contentStyle} className="grid grid-cols-2  tablet:grid-cols-2 mobile:grid-cols-1">
+                <div
+                  style={contentStyle}
+                  className="grid grid-cols-2  tablet:grid-cols-2 mobile:grid-cols-1">
                   <div className="w-full flex justify-center items-center  flex-col px-4 ">
                     <h1 className=" text-gray-600 font-thin text-3xl desktop:text-3xl mobile:text-sm text-justify  ">
                       {product.description}

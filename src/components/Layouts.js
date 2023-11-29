@@ -1,4 +1,4 @@
-import { Layout } from "antd";
+
 import Navbar from "./Ui/Navbar";
 import Footer from "./Ui/Footer";
 
